@@ -1,5 +1,5 @@
 (defproject pong-pang "0.12.30"
-  :description "The page routing ring handler for caribou"
+  :description "A ping-pong challenge/ladder manager"
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [ring/ring-jetty-adapter "1.2.0"]
                  [org.immutant/immutant "1.0.2"]
