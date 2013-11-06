@@ -1,0 +1,24 @@
+11-05 16:50:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "MIGRATION" not found; SQL statement:
+select * from migration [42102-170]
+11-05 16:50:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "MIGRATION" not found; SQL statement:
+select * from migration [42102-170]
+11-05 16:50:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "MODEL" not found; SQL statement:
+select * from model [42102-170]
+11-05 17:11:47 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ACCOUNT.LAST_NAME AS ACCOUNT$LAST_NAME, ACCOUNT.EMAIL AS ACCOUNT$EMAIL, ACCOUNT.ROLE_ID AS ACCOUNT$ROLE_ID, ACCOUNT.STATUS_POSITION AS ACCOUNT$STATUS_POSITION, ACCOUNT.WAITING_TO_PLAY AS ACCOUNT$WAITING_TO_PLAY, ACCOUNT.STATUS_ID AS ACCOUNT$STATUS_ID, ACCOUNT.ROLE_POSITION AS ACCOUNT$ROLE_POSITION, ACCOUNT.UUID AS ACCOUNT$UUID, ACCOUNT.HANDLE AS ACCOUNT$HANDLE, ACCOUNT.LOCKED AS ACCOUNT$LOCKED, ACCOUNT.UPDATED_AT AS ACCOUNT$UPDATED_AT, ACCOUNT.FIRST_NAME AS ACCOUNT$FIRST_NAME, ACCOUNT.ID AS ACCOUNT$ID, ACCOUNT.ENV_ID AS ACCOUNT$ENV_ID, ACCOUNT.POSITION AS ACCOUNT$POSITION, ACCOUNT.CRYPTED_PASSWORD AS ACCOUNT$CRYPTED_PASSWORD, ACCOUNT.CREATED_AT AS ACCOUNT$CREATED_AT FROM ACCOUNT AS ACCOUNT WHERE ACCOUNT.ID IN (SELECT * FROM (SELECT ACCOUNT.ID FROM ACCOUNT WHERE ACCOUNT.WAITING_TO_PLAY UNDEFINED[*] ? ORDER BY ACCOUNT.UPDATED_AT ASC LIMIT 10 OFFSET 0) AS _CONDITIONS_) ORDER BY ACCOUNT.UPDATED_AT ASC "; expected "., [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, GROUP, HAVING, UNION, MINUS, EXCEPT, INTERSECT, ORDER, LIMIT, FOR, )"; SQL statement:
+select account.last_name as account$last_name, account.email as account$email, account.role_id as account$role_id, account.status_position as account$status_position, account.waiting_to_play as account$waiting_to_play, account.status_id as account$status_id, account.role_position as account$role_position, account.uuid as account$uuid, account.handle as account$handle, account.locked as account$locked, account.updated_at as account$updated_at, account.first_name as account$first_name, account.id as account$id, account.env_id as account$env_id, account.position as account$position, account.crypted_password as account$crypted_password, account.created_at as account$created_at from account as account where account.id in (select * from (select account.id from account where account.waiting_to_play undefined ? order by account.updated_at asc limit 10 offset 0) as _conditions_) order by account.updated_at asc [42001-170]
+11-05 17:11:50 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ACCOUNT.LAST_NAME AS ACCOUNT$LAST_NAME, ACCOUNT.EMAIL AS ACCOUNT$EMAIL, ACCOUNT.ROLE_ID AS ACCOUNT$ROLE_ID, ACCOUNT.STATUS_POSITION AS ACCOUNT$STATUS_POSITION, ACCOUNT.WAITING_TO_PLAY AS ACCOUNT$WAITING_TO_PLAY, ACCOUNT.STATUS_ID AS ACCOUNT$STATUS_ID, ACCOUNT.ROLE_POSITION AS ACCOUNT$ROLE_POSITION, ACCOUNT.UUID AS ACCOUNT$UUID, ACCOUNT.HANDLE AS ACCOUNT$HANDLE, ACCOUNT.LOCKED AS ACCOUNT$LOCKED, ACCOUNT.UPDATED_AT AS ACCOUNT$UPDATED_AT, ACCOUNT.FIRST_NAME AS ACCOUNT$FIRST_NAME, ACCOUNT.ID AS ACCOUNT$ID, ACCOUNT.ENV_ID AS ACCOUNT$ENV_ID, ACCOUNT.POSITION AS ACCOUNT$POSITION, ACCOUNT.CRYPTED_PASSWORD AS ACCOUNT$CRYPTED_PASSWORD, ACCOUNT.CREATED_AT AS ACCOUNT$CREATED_AT FROM ACCOUNT AS ACCOUNT WHERE ACCOUNT.ID IN (SELECT * FROM (SELECT ACCOUNT.ID FROM ACCOUNT WHERE ACCOUNT.WAITING_TO_PLAY UNDEFINED[*] ? ORDER BY ACCOUNT.UPDATED_AT ASC LIMIT 10 OFFSET 0) AS _CONDITIONS_) ORDER BY ACCOUNT.UPDATED_AT ASC "; expected "., [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, GROUP, HAVING, UNION, MINUS, EXCEPT, INTERSECT, ORDER, LIMIT, FOR, )"; SQL statement:
+select account.last_name as account$last_name, account.email as account$email, account.role_id as account$role_id, account.status_position as account$status_position, account.waiting_to_play as account$waiting_to_play, account.status_id as account$status_id, account.role_position as account$role_position, account.uuid as account$uuid, account.handle as account$handle, account.locked as account$locked, account.updated_at as account$updated_at, account.first_name as account$first_name, account.id as account$id, account.env_id as account$env_id, account.position as account$position, account.crypted_password as account$crypted_password, account.created_at as account$created_at from account as account where account.id in (select * from (select account.id from account where account.waiting_to_play undefined ? order by account.updated_at asc limit 10 offset 0) as _conditions_) order by account.updated_at asc [42001-170]
+11-05 17:59:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "()"; SQL statement:
+CREATE FORCE VIEW PUBLIC._2 AS
+SELECT
+    MATCH.ID
+FROM PUBLIC.MATCH
+WHERE NOT ()
+ORDER BY =MATCH.UPDATED_AT
+LIMIT 10 OFFSET 0 [22018-170]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>pong-pang - Powered By Caribou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/img/favicon.png">
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>pong-pang</h1>
+    </div>
+    <div class="container">
+      <div class="grid-block">
+        <div class="col-6">
+
+          {{^session.admin.user.waiting-to-play}}
+          <button class="js-ready">I want to play</button>
+          {{/session.admin.user.waiting-to-play}}
+
+          <h1>Recent Matches</h1>
+
+          <ul>
+            {{#page.content.recent-matches:match}}
+              <li> {{match.updated-at}} -  {{match.first-player.first-name}} ({{match.first-player-score}}) vs. {{match.second-player.first-name}} ({{match.second-player-score}}) </li>
+            {{/page.content.recent-matches:match}}
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-block">
+
+        <h1>Waiting for Opponents</h1>
+
+        <ul>
+          {{#page.content.waiting-players:player}}
+            <li> {{ player.first-name }}
+              <button class="js-accept" data-user-id="{{player.id}}">Accept</button>
+            </li>
+          {{/page.content.waiting-players:player}}
+        </ul>
+      </div>
+
+    </div>
+    <footer>
+      <a href="http://www.weareinstrument.com" target="_blank"><img src="/img/teepee_golden.svg"></a>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="/js/pong-pang.js"></script>
+  </body>
+</html>
+
