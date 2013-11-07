@@ -10,12 +10,10 @@
   [request]
   (let [user-id (-> request :params :id)
         user (model/pick :account {:id user-id})
-        pending (model/pick :status {:name "Pending"})
-        match (model/create :match {:first-player user
-                                    :second-player (-> request :session :admin :user)
-                                    :status pending})]
-    (println user)
-    (println match)
+        pending (model/pick :status {:where {:name "Pending"}})
+        match (model/create :match {:first-player-id (:id user)
+                                    :second-player-id (-> request :session :admin :user :id)
+                                    :status-id (:id pending)})]
     (model/update :account user-id {:waiting-to-play false})
 
     ;;; send message to user here
